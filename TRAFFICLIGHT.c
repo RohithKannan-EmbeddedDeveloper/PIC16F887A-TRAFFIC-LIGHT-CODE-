@@ -16,79 +16,184 @@ int main()
 	PORTC=0X00; 
 	TRISD=0X00;
 	PORTD=0X00;	
+	TRISE=0X00;
+	PORTE=0X00;
 	ANSEL=0X00;
 	ANSELH=0X00;
 	while(1)
 	{
 		RA0=0;
 		RA1=0;
-		RA2=1;			
+		RA2=1;
+		///////////
 		RB0=1;
 		RB1=0;
-		RB2=0;	
-		for(number=30;number>0;number--)
+		RB2=0;
+		//////////
+		RC0=1;
+		RC1=0;
+		RC2=0;
+		//////////
+		RE0=1;
+		RE1=0;
+		RE2=0;
+		
+		for(number=30;number>=0;number--)
 	    {			    
 		  	RA3=1,RA4=0;
-			PORTC=Led_array1[number/10];
-			delay(9000);
-	    	RA3=0,RA4=1;
-			PORTC=Led_array2[number%10];
-			delay(9000);
-			///////
-			RB3=1,RB4=0;
 			PORTD=Led_array1[number/10];
 			delay(9000);
-			RB3=0,RB4=1;
+	    	RA3=0,RA4=1;
 			PORTD=Led_array2[number%10];
 			delay(9000);
-			////////////////////////////////
-			
-			if(number<=5)
+			if(number<=10)
 			{
-				RA1=1;
-				RB1=1;
 				RA0=0;
-				RA2=0;
+				RA1=0;
+				RA2=1;
+				///////////
 				RB0=0;
+				RB1=1;
 				RB2=0;
+				//////////
+				RC0=1;
+				RC1=0;
+				RC2=0;
+				//////////
+				RE0=1;
+				RE1=0;
+				RE2=0;		
 			}
-			
-			}
-		////////////////////
+		}
 		RA0=1;
 		RA1=0;
-		RA2=0;			
+		RA2=0;
+		///////////
 		RB0=0;
 		RB1=0;
-		RB2=1;	
-		for(number=30;number>0;number--)
-	    {			    
-		  	RA3=1,RA4=0;
-			PORTC=Led_array1[number/10];
-			delay(9000);
-	    	RA3=0,RA4=1;
-			PORTC=Led_array2[number%10];
-			delay(9000);
-			///////
-			RB3=1,RB4=0;
+		RB2=1;
+		//////////
+		RC0=1;
+		RC1=0;
+		RC2=0;
+		//////////
+		RE0=1;
+		RE1=0;
+		RE2=0;
+		
+		for(number=30;number>=0;number--)
+	    {
+		    RA3=1,RA4=0;
 			PORTD=Led_array1[number/10];
 			delay(9000);
-			RB3=0,RB4=1;
+	    	RA3=0,RA4=1;
 			PORTD=Led_array2[number%10];
 			delay(9000);
-			////////////////////////////////
-			
-			if(number<=5)
-			{
-				RA1=1;
-				RB1=1;
-				RA0=0;
+			if(number<=10)
+			{   
+				RA0=1;
+				RA1=0;
 				RA2=0;
+				///////////
 				RB0=0;
-				RB2=0;
+				RB1=0;
+				RB2=1;
+				//////////
+				RC0=0;
+				RC1=1;
+				RC2=0;
+				//////////
+				RE0=1;
+				RE1=0;
+				RE2=0;		
 			}
-			
-		}	
-				
+		}
+		
+		RA0=1;
+		RA1=0;
+		RA2=0;
+		///////////
+		RB0=1;
+		RB1=0;
+		RB2=0;
+		//////////
+		RC0=0;
+		RC1=0;
+		RC2=1;
+		//////////
+		RE0=1;
+		RE1=0;
+		RE2=0;
+		
+		for(number=30;number>=0;number--)
+	    {
+		    RA3=1,RA4=0;
+			PORTD=Led_array1[number/10];
+			delay(9000);
+	    	RA3=0,RA4=1;
+			PORTD=Led_array2[number%10];
+			delay(9000);
+			if(number<=10)
+			{
+				RA0=1;
+				RA1=0;
+				RA2=0;
+				///////////
+				RB0=1;
+				RB1=0;
+				RB2=0;
+				//////////
+				RC0=0;
+				RC1=0;
+				RC2=1;
+				//////////
+				RE0=0;
+				RE1=1;
+				RE2=0;		
+			}
+		}
+		RA0=1;
+		RA1=0;
+		RA2=0;
+		///////////
+		RB0=1;
+		RB1=0;
+		RB2=0;
+		//////////
+		RC0=1;
+		RC1=0;
+		RC2=0;
+		//////////
+		RE0=0;
+		RE1=0;
+		RE2=1;
+		
+		for(number=30;number>=0;number--)
+	    {
+		    RA3=1,RA4=0;
+			PORTD=Led_array1[number/10];
+			delay(9000);
+	    	RA3=0,RA4=1;
+			PORTD=Led_array2[number%10];
+			delay(9000);
+			if(number<=10)
+			{
+				RA0=0;
+				RA1=1;
+				RA2=0;
+				///////////
+				RB0=1;
+				RB1=0;
+				RB2=0;
+				//////////
+				RC0=1;
+				RC1=0;
+				RC2=0;
+				//////////
+				RE0=0;
+				RE1=0;
+				RE2=1;		
+			}
+		}
 	}
-}				
+}		
